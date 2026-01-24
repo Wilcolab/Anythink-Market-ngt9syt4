@@ -94,7 +94,15 @@ describe('Arithmetic', function () {
     });
 
 // TODO: Challenge #1
- 
+ it("should calculate power correctly", async () => {
+  const response = await request(app)
+    .get("/calculate")
+    .query({ operation: "power", operand1: 2, operand2: 3 });
+
+  expect(response.status).toBe(200);
+  expect(response.body.result).toBe(8);
+});
+
 
     describe('Multiplication', function () {
         it('multiplies two positive integers', function (done) {
