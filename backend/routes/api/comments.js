@@ -15,3 +15,5 @@ module.exports = router;
 // - content (string)
 // - author (string)
 // - createdAt (date, default to current date)
+
+// Ensure proper error handling and response status codes for each endpoint.
