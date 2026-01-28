@@ -22,26 +22,3 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-  go-server:
-    build:
-      context: ./go-server
-      dockerfile: Dockerfile
-    ports:
-      - "8002:8002"
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8002/tasks"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-  ruby-server:
-    build:
-      context: ./ruby-server
-      dockerfile: Dockerfile
-    ports:
-      - "8003:8003"
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8003/tasks"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      
